@@ -28,7 +28,7 @@ namespace Papaya\Composer {
       return $this->_documentRoot;
     }
 
-    public function setTemplateDirecory($path) {
+    public function setTemplateDirectory($path) {
       $this->_templateDirectory = 'papaya-data/templates/';
       $path = trim($path);
       if (!empty($path)) {
