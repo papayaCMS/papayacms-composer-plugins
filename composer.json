@@ -1,0 +1,15 @@
+{
+  "name": "papaya/composer-plugins",
+  "type": "composer-plugin",
+  "description": "papaya CMS Composer Plugins",
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-0": {"Papaya\\Composer": "src/"}
+  },
+  "extra": {
+    "class": "Papaya\\Composer\\InstallerPlugin"
+  },
+  "require": {
+    "composer-plugin-api": "1.0.0"
+  }
+}
