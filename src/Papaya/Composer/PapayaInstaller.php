@@ -9,9 +9,10 @@ namespace Papaya\Composer {
   abstract class PapayaInstaller extends LibraryInstaller {
 
     private $_documentRoot = '';
+    private $_templateDirectory = '';
 
     public function setDocumentRoot($path) {
-      $this->_documentRoot = '';
+      $this->_documentRoot = 'htdocs/';
       $path = trim($path);
       if (!empty($path)) {
         $trailingChar = substr($path, -1);
@@ -25,6 +26,23 @@ namespace Papaya\Composer {
 
     public function getDocumentRoot() {
       return $this->_documentRoot;
+    }
+
+    public function setTemplateDirecory($path) {
+      $this->_templateDirectory = 'papaya-data/templates/';
+      $path = trim($path);
+      if (!empty($path)) {
+        $trailingChar = substr($path, -1);
+        if ($trailingChar != DIRECTORY_SEPARATOR && $trailingChar != '/') {
+          $this->_templateDirectory = $path.'/';
+        } else {
+          $this->_templateDirectory = $path;
+        }
+      }
+    }
+
+    public function getTemplateDirectory() {
+      return $this->_templateDirectory;
     }
 
     public function uninstall(

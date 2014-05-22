@@ -16,7 +16,7 @@ namespace Papaya\Composer {
           'Unable to install template, empty directory name."'
         );
       }
-      return 'papaya-data/templates/'.$name;
+      return $this->getTemplateDirectory().$name;
     }
 
     public function supports($packageType) {

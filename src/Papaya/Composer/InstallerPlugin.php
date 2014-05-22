@@ -10,10 +10,13 @@ namespace Papaya\Composer {
 
     public function activate(Composer $composer, IOInterface $io) {
       $extras = $composer->getPackage()->getExtra();
+      $documentRoot = NULL;
+      $templateDirectory = NULL;
       if (isset($extras['document-root'])) {
         $documentRoot = $extras['document-root'];
-      } else {
-        $documentRoot = 'htdocs/';
+      }
+      if (isset($extras['papaya']['template-directory'])) {
+        $templateDirectory = $extras['papaya']['template-directory'];
       }
       $installers = array(
         new TemplateInstaller($io, $composer),
@@ -22,6 +25,7 @@ namespace Papaya\Composer {
       );
       foreach ($installers as $installer) {
         $installer->setDocumentRoot($documentRoot);
+        $installer->setTemplateDirectory($templateDirectory);
         $composer->getInstallationManager()->addInstaller(
           $installer
         );
