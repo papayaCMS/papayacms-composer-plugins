@@ -23,6 +23,7 @@ namespace Papaya\Composer {
         new ThemeInstaller($io, $composer),
         new AdministrationInstaller($io, $composer)
       );
+      /** @var PapayaInstaller $installer */
       foreach ($installers as $installer) {
         $installer->setDocumentRoot($documentRoot);
         $installer->setTemplateDirectory($templateDirectory);

@@ -29,7 +29,7 @@ namespace Papaya\Composer {
     }
 
     public function setTemplateDirectory($path) {
-      $this->_templateDirectory = 'papaya-data/templates/';
+      $this->_templateDirectory = 'templates/';
       $path = trim($path);
       if (!empty($path)) {
         $trailingChar = substr($path, -1);
