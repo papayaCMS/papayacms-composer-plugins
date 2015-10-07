@@ -10,6 +10,6 @@
     "class": "Papaya\\Composer\\InstallerPlugin"
   },
   "require": {
-    "composer-plugin-api": "1.0.0"
+    "composer-plugin-api": "^1.0"
   }
 }
