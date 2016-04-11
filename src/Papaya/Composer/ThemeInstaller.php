@@ -6,7 +6,7 @@ namespace Papaya\Composer {
 
   class ThemeInstaller extends PapayaInstaller {
 
-    public function getPackageBasePath(PackageInterface $package) {
+    public function getInstallPath(PackageInterface $package) {
       $name = substr(
         strrchr($package->getPrettyName(), '/theme-'),
         7

@@ -6,7 +6,7 @@ namespace Papaya\Composer {
 
   class TemplateInstaller extends PapayaInstaller {
 
-    public function getPackageBasePath(PackageInterface $package) {
+    public function getInstallPath(PackageInterface $package) {
       $name = substr(
         strrchr($package->getPrettyName(), '/template-'),
         10

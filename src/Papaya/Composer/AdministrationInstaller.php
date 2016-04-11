@@ -29,7 +29,7 @@ namespace Papaya\Composer {
       }
     }
 
-    public function getPackageBasePath(PackageInterface $package) {
+    public function getInstallPath(PackageInterface $package) {
       return $this->getDocumentRoot().'papaya';
     }
 
