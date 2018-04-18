@@ -1,5 +1,6 @@
 {
   "name": "papaya/composer-plugins",
+  "license": "GPL-2.0",
   "type": "composer-plugin",
   "description": "papaya CMS Composer Plugins",
   "autoload": {

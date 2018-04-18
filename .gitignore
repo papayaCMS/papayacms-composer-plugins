@@ -1,9 +1,8 @@
 # Composer
 /vendor
-composer.phar
 
 # PHPStorm
-/.idea
+/.idea/
 
 # Eclipse
 /.settings
@@ -11,9 +10,9 @@ composer.phar
 /.buildpath
 
 # Netbeans
-/nbproject
+/nbproject/
 
 # Build Artifacts
-/build
+/build/
 
 
