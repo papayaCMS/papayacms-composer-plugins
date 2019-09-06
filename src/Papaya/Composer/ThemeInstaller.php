@@ -8,9 +8,12 @@ namespace Papaya\Composer {
 
     public function getInstallPath(PackageInterface $package) {
       $name = substr(
-        strrchr($package->getPrettyName(), '/theme-'),
-        7
+        strrchr($package->getPrettyName(), '/'),
+        1
       );
+      if (0 === 'theme-') {
+        $name = substr($name, 6);
+      }
       if (empty($name)) {
         throw new \InvalidArgumentException(
           'Unable to install theme, empty directory name."'
