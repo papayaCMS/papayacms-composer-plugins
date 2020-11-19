@@ -3,8 +3,9 @@
 namespace Papaya\Composer {
 
   use Composer\Package\PackageInterface;
+    use InvalidArgumentException;
 
-  class TemplateInstaller extends PapayaInstaller {
+    class TemplateInstaller extends PapayaInstaller {
 
     public function getInstallPath(PackageInterface $package) {
       $name = substr(
@@ -12,7 +13,7 @@ namespace Papaya\Composer {
         10
       );
       if (empty($name)) {
-        throw new \InvalidArgumentException(
+        throw new InvalidArgumentException(
           'Unable to install template, empty directory name."'
         );
       }

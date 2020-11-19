@@ -5,8 +5,9 @@ namespace Papaya\Composer {
   use Composer\Installer\LibraryInstaller;
   use Composer\Package\PackageInterface;
   use Composer\Repository\InstalledRepositoryInterface;
+    use InvalidArgumentException;
 
-  abstract class PapayaInstaller extends LibraryInstaller {
+    abstract class PapayaInstaller extends LibraryInstaller {
 
     private $_documentRoot = '';
     private $_templateDirectory = '';
@@ -16,7 +17,7 @@ namespace Papaya\Composer {
       $path = trim($path);
       if (!empty($path)) {
         $trailingChar = substr($path, -1);
-        if ($trailingChar != DIRECTORY_SEPARATOR && $trailingChar != '/') {
+        if ($trailingChar !== DIRECTORY_SEPARATOR && $trailingChar !== '/') {
           $this->_documentRoot = $path.'/';
         } else {
           $this->_documentRoot = $path;
@@ -33,7 +34,7 @@ namespace Papaya\Composer {
       $path = trim($path);
       if (!empty($path)) {
         $trailingChar = substr($path, -1);
-        if ($trailingChar != DIRECTORY_SEPARATOR && $trailingChar != '/') {
+        if ($trailingChar !== DIRECTORY_SEPARATOR && $trailingChar !== '/') {
           $this->_templateDirectory = $path.'/';
         } else {
           $this->_templateDirectory = $path;
@@ -49,7 +50,7 @@ namespace Papaya\Composer {
       InstalledRepositoryInterface $repo, PackageInterface $package
     ) {
       if (!$repo->hasPackage($package)) {
-        throw new \InvalidArgumentException('Package is not installed: '.$package);
+        throw new InvalidArgumentException('Package is not installed: '.$package);
       }
 
       $repo->removePackage($package);

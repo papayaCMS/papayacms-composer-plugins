@@ -3,8 +3,9 @@
 namespace Papaya\Composer {
 
   use Composer\Package\PackageInterface;
+    use InvalidArgumentException;
 
-  class ThemeInstaller extends PapayaInstaller {
+    class ThemeInstaller extends PapayaInstaller {
 
     public function getInstallPath(PackageInterface $package) {
       $name = substr(
@@ -15,7 +16,7 @@ namespace Papaya\Composer {
         $name = substr($name, 6);
       }
       if (empty($name)) {
-        throw new \InvalidArgumentException(
+        throw new InvalidArgumentException(
           'Unable to install theme, empty directory name."'
         );
       }

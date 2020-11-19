@@ -19,7 +19,7 @@ namespace Papaya\Composer {
       PackageInterface $current
     ) {
       foreach ($repo->getPackages() as $package) {
-        if ($package->getType() == 'papaya-administration-ui') {
+        if ($package->getType() === 'papaya-administration-ui') {
           throw new \InvalidArgumentException(
             'Can not install package '.$current->getPrettyName().'.'.
             ' Only a single papaya-administration-ui package can be installed.'.
